@@ -18,7 +18,7 @@ export const SliderPage = () => {
     speed: 500,
   };
   return (
-    <div className="slider-container" style={{ padding: "40px" }}>
+    <div className="slider-container" style={{cursor: "pointer", overflowX: "hidden"}}>
       <Slider {...settings}>
         <div>
           <Image src={banner} alt="banner" />
