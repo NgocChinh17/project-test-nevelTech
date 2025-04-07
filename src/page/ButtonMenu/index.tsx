@@ -11,10 +11,11 @@ import games from "../../assets/iconButton/games.svg";
 import providers from "../../assets/iconButton/providers.svg";
 import search from "../../assets/iconButton/search.svg";
 
+import './style.scss';
+
 const buttonStyle = {
   backgroundColor: "#03193A",
   color: "white",
-  padding: "16px 50px",
   fontSize: "13px",
   width: "100%",
   display: "flex",
@@ -24,7 +25,7 @@ const buttonStyle = {
 
 export const MenuButton = () => {
   return (
-    <div style={{ overflowX: "hidden" }}>
+    <div className="responsive-padding" style={{ overflowX: "hidden" }}>
       <Row 
         style={{
           display: "flex", 

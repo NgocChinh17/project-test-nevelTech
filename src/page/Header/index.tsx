@@ -1,7 +1,6 @@
 "use client";
-
 import Image from "next/image";
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import {
   Button,
   Drawer,
@@ -32,6 +31,17 @@ export const HeaderPage = () => {
   const [placement] = useState<DrawerProps["placement"]>("left");
   const [showSearch, setShowSearch] = useState(false);
   const [activeItem, setActiveItem] = useState<number | null>(null);
+
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth >= 1200);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const showDrawer = () => {
     setOpen(true);
@@ -96,9 +106,9 @@ export const HeaderPage = () => {
       style={{
         backgroundColor: "#03193A",
         color: "white",
-        height: "67.8px", 
+        height: "67.8px",
         width: "100%",
-        padding: "10px 20px",
+        padding: isLargeScreen ? "16px 240px" : "10px 20px",
         boxSizing: "border-box",
       }}
     >

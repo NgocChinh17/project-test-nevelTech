@@ -1,8 +1,12 @@
+.slick-arrow {
+  display: none !important;
+}
+
 .box {
   width: 156px;
   height: 122px;
   border-radius: 10px;
-  display: flex;
+  display: flex;  
   flex-direction: column;
   font-family: Arial, sans-serif;
   text-align: center;

@@ -1,41 +1,59 @@
+.game-card-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .game-card {
-    position: relative;
+  position: relative;
+  width: 100%;
+  height: auto;
+  border-radius: 22px;
+  overflow: hidden;
+
+  .game-image {
     width: 100%;
     height: auto;
     border-radius: 22px;
-    overflow: hidden;
-  
-    .game-image {
-      width: 100%;
-      height: auto;
-      border-radius: 22px;
-      transition: transform 0.3s ease;
-    }
-  
-    &:hover .game-image {
-      transform: scale(1.05);
-    }
-  
-    &.hot::before,
-    &.news::before {
-      position: absolute;
-      top: 10px;
-      left: -4px;
-      width: 36px;
-      height: 21px;
-      content: "";
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      z-index: 2;
-    }
-  
-    &.hot::before {
-      background-image: url("../../assets/tag/HOT.svg");
-    }
-  
-    &.news::before {
-      background-image: url("../../assets/tag/NEW.svg");
-    }
+    transition: transform 0.3s ease;
+    display: block;
   }
-  
+
+  &:hover .game-image {
+    transform: scale(1.05);
+  }
+
+  &.hot::before,
+  &.news::before {
+    position: absolute;
+    top: 10px;
+    left: -4px;
+    width: 36px;
+    height: 21px;
+    content: "";
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+  }
+
+  &.hot::before {
+    background-image: url("../../assets/tag/HOT.svg");
+  }
+
+  &.news::before {
+    background-image: url("../../assets/tag/NEW.svg");
+  }
+
+  .overlay-text {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 2;
+    margin: 0;
+  }
+}

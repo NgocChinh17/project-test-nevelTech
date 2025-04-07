@@ -22,7 +22,11 @@ export const FooterPage = () => {
   return (
     <div
       className="footer-mobile"
-      style={{ backgroundColor: "#12294A", color: "#fff", padding: "2rem" }}
+      style={{
+        backgroundColor: "#12294A",
+        color: "#fff",
+        padding: isMobile ? "2rem" : "16px 240px",
+      }}
     >
       {isMobile ? (
         <>
@@ -87,7 +91,9 @@ export const FooterPage = () => {
             >
               <div>
                 <div style={{ fontWeight: 50, fontSize: 15 }}>Help Center</div>
-                <div style={{ fontSize: 13, fontWeight: 400, color: "#90A2BD" }}>
+                <div
+                  style={{ fontSize: 13, fontWeight: 400, color: "#90A2BD" }}
+                >
                   If you have any questions?
                 </div>
               </div>
@@ -121,7 +127,9 @@ export const FooterPage = () => {
               >
                 <Image src={android} alt="Android" width={28} height={28} />
                 <div>
-                  <div style={{ fontWeight: 500, fontSize: 12 }}>Bluechip App</div>
+                  <div style={{ fontWeight: 500, fontSize: 12 }}>
+                    Bluechip App
+                  </div>
                   <div style={{ fontSize: 12, color: "#90A2BD" }}>
                     for Android
                   </div>
@@ -142,7 +150,9 @@ export const FooterPage = () => {
               >
                 <Image src={apple} alt="iOS" width={28} height={28} />
                 <div>
-                  <div style={{ fontWeight: 500, fontSize: 12 }}>Bluechip App</div>
+                  <div style={{ fontWeight: 500, fontSize: 12 }}>
+                    Bluechip App
+                  </div>
                   <div style={{ fontSize: 12, color: "#90A2BD" }}>for iOS</div>
                 </div>
               </div>
@@ -154,7 +164,7 @@ export const FooterPage = () => {
           <Col xs={24} sm={24} md={12} lg={6} xl={6}>
             <div style={{ fontWeight: 600, fontSize: 16 }}>Help Center</div>
             <div style={{ marginBottom: 8 }}>If you have any questions?</div>
-            <Button type="primary" style={{ marginBottom: 16 }}>
+            <Button type="primary" style={{ marginBottom: 16, width: 200 }}>
               GET ANSWERS
             </Button>
             <div style={{ display: "flex", gap: 16 }}>
@@ -205,6 +215,7 @@ export const FooterPage = () => {
                   display: "flex",
                   alignItems: "center",
                   gap: 10,
+                  maxWidth: 142,
                 }}
               >
                 <Image src={apple} alt="Apple" width={24} height={24} />
@@ -221,6 +232,7 @@ export const FooterPage = () => {
                     borderRadius: "8px",
                     flex: 1,
                     textAlign: "center",
+                    maxWidth: 80,
                   }}
                 >
                   <Image src={android} alt="Android" width={24} height={24} />
@@ -233,6 +245,7 @@ export const FooterPage = () => {
                     borderRadius: "8px",
                     flex: 1,
                     textAlign: "center",
+                    maxWidth: 50,
                   }}
                 >
                   <Image src={apple} alt="Apple" width={24} height={24} />

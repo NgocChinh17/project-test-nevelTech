@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import banner from "../../assets/image/HR banner.png";
 import Image from "next/image";
+import './style.scss';
 
 export const SliderPage = () => {
   const settings = {
@@ -16,28 +17,36 @@ export const SliderPage = () => {
     centerPadding: "60px",
     slidesToShow: 3,
     speed: 500,
+    focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: "20px",
+        },
+      },
+    ],
   };
+
   return (
-    <div className="slider-container" style={{cursor: "pointer", overflowX: "hidden"}}>
+    <div className="slider-container">
       <Slider {...settings}>
-        <div>
-          <Image src={banner} alt="banner" />
-        </div>
-        <div>
-          <Image src={banner} alt="banner" />
-        </div>
-        <div>
-          <Image src={banner} alt="banner" />
-        </div>
-        <div>
-          <Image src={banner} alt="banner" />
-        </div>
-        <div>
-          <Image src={banner} alt="banner" />
-        </div>
-        <div>
-          <Image src={banner} alt="banner" />
-        </div>
+        {[...Array(6)].map((_, index) => (
+          <div key={index}>
+            <div className="image-wrapper">
+              <Image
+                src={banner}
+                alt={`Banner ${index + 1}`}
+                layout="responsive"
+                width={1000}
+                height={500}
+                objectFit="cover"
+                priority={index === 0}
+              />
+            </div>
+          </div>
+        ))}
       </Slider>
     </div>
   );
