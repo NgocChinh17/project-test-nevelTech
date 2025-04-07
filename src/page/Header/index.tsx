@@ -11,7 +11,7 @@ import {
   Dropdown,
   Menu,
 } from "antd";
-import { MenuOutlined, SearchOutlined } from "@ant-design/icons";
+import { CloseOutlined, MenuOutlined, SearchOutlined } from "@ant-design/icons";
 
 // image
 import White_logo from "../../assets/image/White_logo.svg";
@@ -120,11 +120,19 @@ export const HeaderPage = () => {
               style={{ fontSize: "20px", marginRight: "10px", color: "white" }}
             />
             <Drawer
-              title="Menu"
+              title={<span style={{ color: "white" }}>Menu</span>}
               placement={placement}
               width={300}
               onClose={onClose}
               open={open}
+              closeIcon={<CloseOutlined style={{ color: "white" }} />}
+              bodyStyle={{
+                backgroundColor: "#03193A",
+              }}
+              headerStyle={{
+                backgroundColor: "#03193A",
+                borderBottom: "1px solid #12294A",
+              }}
             >
               <div
                 style={{
@@ -139,9 +147,18 @@ export const HeaderPage = () => {
                     href={item.path}
                     onClick={() => handleMenuClick(item.id)}
                     style={{
-                      color: activeItem === item.id ? "#00C4B4" : "black",
+                      color: activeItem === item.id ? "#00C4B4" : "white",
                       textDecoration: "none",
+                      transition: "color 0.3s",
+                      fontSize: "16px",
                     }}
+                    onMouseOver={(e) =>
+                      (e.currentTarget.style.color = "#00C4B4")
+                    }
+                    onMouseOut={(e) =>
+                      (e.currentTarget.style.color =
+                        activeItem === item.id ? "#00C4B4" : "white")
+                    }
                   >
                     {item.title}
                   </a>
