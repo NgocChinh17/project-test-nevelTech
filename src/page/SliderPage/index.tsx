@@ -16,7 +16,7 @@ export const SliderPage = () => {
     className: "center",
     centerMode: true,
     infinite: true,
-    centerPadding: "18%", // giảm để ảnh to hơn
+    centerPadding: "18%",
     slidesToShow: 1,
     speed: 1000,
     focusOnSelect: true,
@@ -24,8 +24,8 @@ export const SliderPage = () => {
       {
         breakpoint: 768,
         settings: {
-          centerPadding: "0%", // ảnh gần full trên mobile
-          dots: true,
+          centerPadding: "0%",
+          dots: true, // Bật dots chỉ trên mobile
         },
       },
     ],

@@ -109,7 +109,7 @@ export const FooterPage = () => {
               style={{
                 display: "flex",
                 justifyContent: "center",
-                gap: isMobile ? 44.33 : 24,
+                gap: 44.33,
                 padding: 0,
                 listStyle: "none",
               }}
@@ -117,7 +117,11 @@ export const FooterPage = () => {
               {socialIcons.map((item, idx) => (
                 <li key={idx}>
                   <a href={item.href} target="_blank" rel="noopener noreferrer">
-                    <Image src={item.icon} alt={item.alt} width={24} height={24} />
+                    <Image
+                      src={item.icon}
+                      alt={item.alt}
+                      className="social-icon"
+                    />
                   </a>
                 </li>
               ))}
@@ -125,22 +129,10 @@ export const FooterPage = () => {
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: "2rem" }}>
-            <div
-              style={{
-                backgroundColor: "#1A3157",
-                padding: "16px",
-                borderRadius: "8px",
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                marginBottom: 16,
-              }}
-            >
+            <div className="help-box">
               <div>
-                <div style={{ fontWeight: 500, fontSize: 15 }}>Help Center</div>
-                <div style={{ fontSize: 13, color: "#90A2BD" }}>
-                  If you have any questions?
-                </div>
+                <div className="help-title">Help Center</div>
+                <div className="help-subtext">If you have any questions?</div>
               </div>
               <Button
                 type="primary"
@@ -157,22 +149,11 @@ export const FooterPage = () => {
 
             <div style={{ display: "flex", gap: 12 }}>
               {[{ icon: android, label: "Android" }, { icon: apple, label: "iOS" }].map((app, idx) => (
-                <div
-                  key={idx}
-                  style={{
-                    backgroundColor: "#1A3157",
-                    padding: "10px 12px",
-                    borderRadius: "8px",
-                    flex: 1,
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 12,
-                  }}
-                >
+                <div key={idx} className="app-box">
                   <Image src={app.icon} alt={app.label} width={28} height={28} />
                   <div>
-                    <div style={{ fontWeight: 500, fontSize: 12 }}>Bluechip App</div>
-                    <div style={{ fontSize: 12, color: "#90A2BD" }}>for {app.label}</div>
+                    <div className="app-title">Bluechip App</div>
+                    <div className="app-subtext">for {app.label}</div>
                   </div>
                 </div>
               ))}
@@ -191,7 +172,11 @@ export const FooterPage = () => {
               {socialIcons.map((item, idx) => (
                 <li key={idx}>
                   <a href={item.href} target="_blank" rel="noopener noreferrer">
-                    <Image src={item.icon} alt={item.alt} width={24} height={24} />
+                    <Image
+                      src={item.icon}
+                      alt={item.alt}
+                      className="social-icon"
+                    />
                   </a>
                 </li>
               ))}
@@ -213,17 +198,7 @@ export const FooterPage = () => {
 
           <Col xs={24} sm={12} md={12} lg={6}>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              <div
-                style={{
-                  backgroundColor: "#1A3157",
-                  padding: "10px",
-                  borderRadius: "8px",
-                  display: "flex",
-                  gap: 10,
-                  alignItems: "center",
-                  width: 200,
-                }}
-              >
+              <div className="mac-box">
                 <Image src={apple} alt="Apple" width={32} height={32} />
                 <div>
                   <div style={{ fontWeight: 600, fontSize: 14 }}>Bluechip App</div>
@@ -232,20 +207,7 @@ export const FooterPage = () => {
               </div>
               <div style={{ display: "flex", gap: 12 }}>
                 {[{ icon: android, label: "Android" }, { icon: apple, label: "iOS" }].map((item, idx) => (
-                  <div
-                    key={idx}
-                    style={{
-                      backgroundColor: "#1A3157",
-                      padding: "10px",
-                      borderRadius: "8px",
-                      width: 66,
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: 6,
-                    }}
-                  >
+                  <div key={idx} className="app-icon-box">
                     <Link href="#" style={{ textAlign: "center", color: "#fff" }}>
                       <Image src={item.icon} alt={item.label} width={24} height={24} />
                       <div style={{ fontSize: 12 }}>{item.label}</div>

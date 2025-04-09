@@ -13,12 +13,14 @@
   .game-image {
     width: 100%;
     height: auto;
-    transition: transform 0.3s ease;
     display: block;
+    /* Bỏ transition */
+    transition: none;
   }
 
+  /* Bỏ hover */
   &:hover .game-image {
-    transform: scale(1.05);
+    transform: none;
   }
 
   &.hot::before,
@@ -45,11 +47,11 @@
 
   .overlay-text {
     position: absolute;
-    bottom: 10px;
+    bottom: 6px;
     left: 50%;
     transform: translateX(-50%);
     color: white;
-    font-size: 14px;
+    font-size: 8px;
     font-weight: 500;
     z-index: 2;
     margin: 0;

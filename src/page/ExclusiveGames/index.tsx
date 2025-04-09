@@ -10,14 +10,14 @@ import "slick-carousel/slick/slick-theme.css";
 
 // Assets
 import seeAll from "@assets/iconButton/seeAll.svg";
-import HPGaming from "@assets/ImageSlider/BlueChipSpicyJackpot.jpg";
-import veliplay from "@assets/ImageSlider/DeepDive.jpg";
-import evolution from "@assets/ImageSlider/FuryBalloon.jpg";
-import launch from "@assets/ImageSlider/LaunchX.jpg";
-import deepdive from "@assets/ImageSlider/Roulette.jpg";
-import funry from "@assets/ImageSlider/TrdubleJet.jpg";
-import cuoi from "@assets/ImageSlider/XMatch.jpg";
-import BlueChipSpace from "@assets/ImageSlider/BlueChipSpace.jpg";
+import HPGaming from "@assets/ImageSlider/BlueChipSpace.png";
+import veliplay from "@assets/ImageSlider/BluechipSpicyJackpot.png";
+import evolution from "@assets/ImageSlider/DeepDive.png";
+import launch from "@assets/ImageSlider/FuryBalloon.png";
+import deepdive from "@assets/ImageSlider/LaunchX.png";
+import funry from "@assets/ImageSlider/Roulette.png";
+import cuoi from "@assets/ImageSlider/TrdubleJet.png";
+import BlueChipSpace from "@assets/ImageSlider/Xmatch.png";
 
 // Components
 import { AllProviders } from "@/page/AllProviders";

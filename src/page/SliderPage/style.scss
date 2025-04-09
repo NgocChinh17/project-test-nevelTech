@@ -1,11 +1,10 @@
 .slider-container {
   width: 100%;
-  overflow-x: hidden; // ✅ Ngăn scroll ngang
   margin-bottom: 40px;
   position: relative;
 
   .slick-list {
-    overflow: visible !important;
+    overflow: hidden;
   }
 
   .slick-track {
@@ -18,7 +17,7 @@
     justify-content: center;
     align-items: center;
     transition: all 0.5s ease;
-    padding: 0 8px; // ✅ Thêm khoảng cách đều mà không làm tràn
+    padding: 0 8px;
     box-sizing: border-box;
   }
 
@@ -48,43 +47,55 @@
     opacity: 1;
   }
 
+  // Dots style - chỉ hiện khi mobile
   .slick-dots {
-    bottom: -30px;
+    display: none !important; // Ẩn mặc định (desktop)
+
+    @media (max-width: 768px) {
+      display: flex !important; // Hiện ở mobile
+      justify-content: center;
+      align-items: center;
+      gap: 0px; // ✅ Khoảng cách giữa các dots đã chỉnh
+      bottom: -12px;
+      position: absolute;
+      width: 100%;
+    }
 
     li {
-      margin: 0 4px;
+      width: 10px;
+      height: 10px;
 
-      button:before {
-        content: "";
-        width: 6px;
-        height: 6px;
-        background-color: #fff;
-        border-radius: 50%;
-        opacity: 0.5;
-        display: inline-block;
-        margin-top: 14px;
+      button {
+        padding: 0;
+        width: 10px;
+        height: 10px;
+
+        &:before {
+          content: "";
+          display: block;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: #ccc;
+          opacity: 0.6;
+          transition: all 0.3s ease;
+        }
       }
 
       &.slick-active button:before {
-        opacity: 1;
         background-color: #fff;
+        width: 10px;
+        height: 10px;
+        opacity: 1;
       }
     }
   }
 }
 
 @media (max-width: 768px) {
-  .slider-container {
-    overflow-x: hidden; // ✅ Cũng chặn scroll ngang trên mobile
-
-    .slick-dots {
-      position: absolute;
-      bottom: 0;
-    }
-  }
-
   header {
     position: relative;
     z-index: 10;
   }
 }
+  

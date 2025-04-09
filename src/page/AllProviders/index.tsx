@@ -59,7 +59,13 @@ export const AllProviders = () => {
           <div key={provider.id}>
             <div className="box">
               <div className="topSection">
-                <Image src={provider.logo} alt={provider.name} />
+                <Image
+                  src={provider.logo}
+                  alt={provider.name}
+                  width={93}
+                  height={30}
+                  className="logo-image"
+                />
               </div>
               <div className="bottomSection">
                 <div className="title">{provider.name}</div>

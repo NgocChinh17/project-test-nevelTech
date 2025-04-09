@@ -4,6 +4,27 @@
 
 .slider-wrapper {
   margin-bottom: 40px;
+  padding: 0 12px;
+
+  .slick-slide {
+    padding: 0 12px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 8px;
+
+    .slick-slide {
+      padding: 0 8px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    padding: 0 6px;
+
+    .slick-slide {
+      padding: 0 3px; // spacing giữa các slide là 6px
+    }
+  }
 }
 
 .box {
@@ -15,10 +36,17 @@
   font-family: Arial, sans-serif;
   text-align: center;
   overflow: hidden;
-  margin: 0 12px; // khoảng cách slide mặc định
+  pointer-events: auto;
+  cursor: pointer;
+  background: none;
 
-  @media (max-width: 768px) {
-    margin: 0 6px; // ✅ khoảng cách 6px cho mobile
+  &:hover,
+  &:focus,
+  &:active {
+    background: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+    filter: none !important;
   }
 }
 
@@ -29,9 +57,20 @@
   align-items: center;
   justify-content: center;
 
-  img {
-    max-width: 80px;
-    height: auto;
+  .logo-image {
+    width: 93px !important;
+    height: 30px !important;
+    object-fit: contain;
+    transition: none !important;
+    filter: none !important;
+    transform: none !important;
+
+    &:hover,
+    &:focus,
+    &:active {
+      transform: none !important;
+      filter: none !important;
+    }
   }
 }
 
@@ -61,10 +100,6 @@
     width: 120px;
     height: 122px;
 
-    .topSection img {
-      max-width: 60px;
-    }
-
     .bottomSection {
       .title {
         font-size: 11px;
@@ -82,10 +117,6 @@
   .box {
     width: 110px;
     height: 122px;
-
-    .topSection img {
-      max-width: 50px;
-    }
 
     .bottomSection {
       .title {

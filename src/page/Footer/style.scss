@@ -1,80 +1,89 @@
 .footer-mobile {
-    background-color: #12294a;
-    color: #fff;
-    padding: 60px 240px;
-  
-    .container {
-      max-width: 1440px;
-      margin: 0 auto;
-    }
-  
-    .white {
-      color: #90A2BD !important;
-    }
-  
-    .ant-collapse-header-text,
-    .ant-collapse-expand-icon {
-      color: #fff !important;
-    }
-  
-    .help-box {
-      background-color: #1a3157;
-      padding: 16px;
-      border-radius: 8px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-  
-    .help-title {
-      font-weight: 600;
-      font-size: 15px;
-    }
-  
-    .help-subtext {
-      font-size: 13px;
-      color: #90a2bd;
-    }
-  
-    .app-box {
-      background-color: #1a3157;
-      padding: 10px 12px;
-      border-radius: 8px;
-      flex: 1;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-  
-    .app-title {
-      font-weight: 500;
-      font-size: 12px;
-    }
-  
-    .app-subtext {
-      font-size: 12px;
-      color: #90a2bd;
-    }
-  
-    .mac-box {
-      background-color: #1a3157;
-      padding: 10px;
-      border-radius: 8px;
-      display: flex;
-      gap: 10px;
-      max-width: 142px;
-    }
-  
-    .app-icon-box {
-      background-color: #1a3157;
-      padding: 10px;
-      border-radius: 8px;
-      width: 66px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
+  background-color: #12294a;
+  color: #fff;
+  padding: 60px 240px;
+
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .white {
+    color: #90a2bd !important;
+  }
+
+  .ant-collapse-header-text,
+  .ant-collapse-expand-icon {
+    color: #fff !important;
+  }
+
+  .help-box {
+    background-color: #1a3157;
+    padding: 16px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .help-title {
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .help-subtext {
+    font-size: 13px;
+    color: #90a2bd;
+  }
+
+  .app-box {
+    background-color: #1a3157;
+    padding: 10px 12px;
+    border-radius: 8px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .app-title {
+    font-weight: 500;
+    font-size: 12px;
+  }
+
+  .app-subtext {
+    font-size: 12px;
+    color: #90a2bd;
+  }
+
+  .mac-box {
+    background-color: #1a3157;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    max-width: 142px;
+  }
+
+  .app-icon-box {
+    background-color: #1a3157;
+    padding: 10px;
+    border-radius: 8px;
+    width: 66px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .social-icon {
+    width: 30px;
+    height: 30px;
+
+    @media (max-width: 768px) {
+      width: 35px;
+      height: 35px;
     }
   }
-  
+}
