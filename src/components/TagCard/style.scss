@@ -8,13 +8,11 @@
   position: relative;
   width: 100%;
   height: auto;
-  border-radius: 22px;
   overflow: hidden;
 
   .game-image {
     width: 100%;
     height: auto;
-    border-radius: 22px;
     transition: transform 0.3s ease;
     display: block;
   }
@@ -38,11 +36,11 @@
   }
 
   &.hot::before {
-    background-image: url("../../assets/tag/HOT.svg");
+    background-image: url("../../assets/tag/HOT.png");
   }
 
   &.news::before {
-    background-image: url("../../assets/tag/NEW.svg");
+    background-image: url("../../assets/tag/NEW.png");
   }
 
   .overlay-text {

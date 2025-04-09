@@ -1,112 +1,85 @@
 .slider-container {
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden; 
+  margin-bottom: 40px;
 
-  // Desktop styles (original)
-  .slick-center .image-wrapper img {
-    transform: scale(1.1);
-    transition: transform 0.5s ease;
+  .slick-list {
+    overflow: visible !important;
   }
 
-  .slick-slide img {
-    transform: scale(0.9);
-    transition: transform 0.5s ease;
+  .slick-track {
+    display: flex;
+    align-items: center;
+  }
+
+  .slick-slide {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
   }
 
   .image-wrapper {
-    position: relative;
-    width: 100%;
-    height: auto; // Ensure the image scales properly
-  }
+    border-radius: 16px;
+    width: auto;
+    height: auto;
 
-  // Mobile styles (custom layout)
-  .custom-slide {
-    padding: 0 10px; // Small padding for the slide
-  }
-
-  .slide-content {
-    background-color: #1a3c34; // Dark teal background to match the banner
-    border-radius: 15px; // Rounded corners
-    overflow: hidden;
-    text-align: center;
-    color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // Subtle shadow for depth
-  }
-
-  .text-content {
-    padding: 15px 20px; // Reduced padding to match banner spacing
-
-    .label {
-      display: inline-block;
-      background-color: rgba(255, 255, 255, 0.2);
-      padding: 5px 10px;
-      border-radius: 15px;
-      font-size: 12px; // Smaller font to match banner
-      margin-bottom: 8px;
-    }
-
-    .title {
-      font-size: 20px; // Adjusted to match banner
-      font-weight: bold;
-      margin: 0;
-      line-height: 1.2;
-    }
-
-    .prize {
-      font-size: 18px; // Adjusted to match banner
-      margin: 5px 0 10px;
-      line-height: 1.2;
-    }
-
-    .discover-button {
-      background-color: #ff3b5f; // Pink button color
-      color: white;
-      border: none;
-      padding: 10px 30px; // Wider button to match banner
-      border-radius: 25px;
-      font-size: 14px; // Smaller font to match banner
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: #e03355; // Slightly darker pink on hover
-      }
+    img {
+      display: block;
+      width: auto !important;
+      height: auto !important;
+      max-width: 100%;
+      transition: transform 0.5s ease, opacity 0.5s ease;
     }
   }
 
-  .slick-center .slide-content {
-    transform: scale(1.05); // Slightly scale up the centered slide
-    transition: transform 0.5s ease;
+  .slick-slide:not(.slick-center) .image-wrapper img {
+    transform: scale(0.85);
+    opacity: 0.3;
   }
 
-  .slick-slide .slide-content {
-    transform: scale(0.95); // Slightly scale down non-centered slides
-    transition: transform 0.5s ease;
+  .slick-center .image-wrapper img {
+    transform: none;
+    opacity: 1;
+    border-radius: 16px;
   }
 
-  // Style the dots (white circles to match the banner)
   .slick-dots {
-    bottom: -20px; // Closer to the bottom to match banner
+    bottom: -30px;
 
     li {
-      margin: 0 4px; // Spacing between dots
+      margin: 0 4px;
 
       button:before {
-        content: ""; // Remove default dot content
-        width: 10px; // Circle size
-        height: 10px;
-        background-color: #fff; // White color
-        border-radius: 50%; // Make it a circle
-        opacity: 0.5; // Slightly transparent for inactive dots
+        content: "";
+        width: 6px;
+        height: 6px;
+        background-color: #fff;
+        border-radius: 50%;
+        opacity: 0.5;
         display: inline-block;
+        margin-top: 14px;
       }
 
       &.slick-active button:before {
-        opacity: 1; // Fully opaque for active dot
-        background-color: #fff; // White color
+        opacity: 1;
+        background-color: #fff;
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-container {
+    .slick-dots {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  header {
+    position: relative;
+    z-index: 10;
   }
 }

@@ -1,84 +1,130 @@
 "use client";
 import React from "react";
-import { Button, Col, Collapse, Grid, Row } from "antd";
+import Link from "next/link";
 import Image from "next/image";
+import { Button, Collapse, Grid, Row, Col } from "antd";
 
 import "./style.scss";
 
-import facebook from "../../assets/iconFooter/fb.svg";
-import instagram from "../../assets/iconFooter/ig.svg";
-import telegram from "../../assets/iconFooter/tele.svg";
-import twitter from "../../assets/iconFooter/tw.svg";
-import apple from "../../assets/iconFooter/apple.svg";
-import android from "../../assets/iconFooter/android.svg";
+import facebook from "@/assets/iconFooter/fb.svg";
+import instagram from "@/assets/iconFooter/ig.svg";
+import telegram from "@/assets/iconFooter/tele.svg";
+import twitter from "@/assets/iconFooter/tw.svg";
+import apple from "@/assets/iconFooter/apple.svg";
+import android from "@/assets/iconFooter/android.svg";
 
 const { useBreakpoint } = Grid;
 const { Panel } = Collapse;
+
+const footerMenus = [
+  {
+    title: "Games",
+    links: [
+      { name: "Game 1", href: "#" },
+      { name: "Game 2", href: "#" },
+      { name: "Game 3", href: "#" },
+      { name: "Game 14", href: "#" },
+    ],
+  },
+  {
+    title: "About",
+    links: [
+      { name: "About Us", href: "#" },
+      { name: "Promotions", href: "#" },
+      { name: "VIP", href: "#" },
+      { name: "Help Center", href: "#" },
+      { name: "Awards & Certificates", href: "#" },
+      { name: "App", href: "#" },
+    ],
+  },
+  {
+    title: "Legal Information",
+    links: [
+      { name: "General Terms & Conditions", href: "#" },
+      { name: "Responsible Gaming Policy", href: "#" },
+      { name: "Sports Betting Rules", href: "#" },
+      { name: "Privacy and Cookies Policy", href: "#" },
+      { name: "Payment Methods", href: "#" },
+      { name: "Limits", href: "#" },
+    ],
+  },
+];
+
+const socialIcons = [
+  { icon: telegram, alt: "Telegram", href: "#" },
+  { icon: facebook, alt: "Facebook", href: "#" },
+  { icon: instagram, alt: "Instagram", href: "#" },
+  { icon: twitter, alt: "Twitter", href: "#" },
+];
 
 export const FooterPage = () => {
   const screens = useBreakpoint();
   const isMobile = !screens.md;
 
   return (
-    <div
+    <footer
       className="footer-mobile"
       style={{
         backgroundColor: "#12294A",
         color: "#fff",
-        padding: isMobile ? "2rem" : "16px 240px",
+        padding: isMobile ? "2rem" : "60px 220px",
       }}
     >
       {isMobile ? (
         <>
           <Collapse
             ghost
-            accordion
             expandIconPosition="end"
-            style={{ backgroundColor: "transparent", color: "white" }}
+            defaultActiveKey={["0", "1", "2"]}
           >
-            <Panel header="Games" key="1">
-              <div className="white">Game 1</div>
-              <div className="white">Game 2</div>
-              <div className="white">Game 3</div>
-              <div className="white">Game 14</div>
-            </Panel>
-            <Panel header="About" key="2">
-              <div className="white">About Us</div>
-              <div className="white">Promotions</div>
-              <div className="white">VIP</div>
-              <div className="white">Help Center</div>
-              <div className="white">Awards & Certificates</div>
-              <div className="white">App</div>
-            </Panel>
-            <Panel header="Legal Information" key="3">
-              <div className="white">General Terms & Conditions</div>
-              <div className="white">Responsible Gaming Policy</div>
-              <div className="white">Sports Betting Rules</div>
-              <div className="white">Privacy and Cookies Policy</div>
-              <div className="white">Payment Methods</div>
-              <div className="white">Limits</div>
-            </Panel>
+            {footerMenus.map((menu, idx) => (
+              <Panel
+                header={menu.title}
+                key={String(idx)}
+                style={{
+                  backgroundColor: "#1A3157",
+                  borderRadius: 10,
+                  marginBottom: 16,
+                  overflow: "hidden",
+                }}
+              >
+                <ul style={{ paddingLeft: 16 }}>
+                  {menu.links.map((link, index) => (
+                    <li key={index} style={{ marginBottom: 20 }}>
+                      <Link href={link.href} className="white">
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </Panel>
+            ))}
           </Collapse>
 
-          <div style={{ textAlign: "center", marginTop: "2rem" }}>
-            <div style={{ marginBottom: 8 }}>Follow Us</div>
-            <div style={{ display: "flex", justifyContent: "center", gap: 16 }}>
-              <Image src={telegram} alt="Telegram" width={24} height={24} />
-              <Image src={facebook} alt="Facebook" width={24} height={24} />
-              <Image src={instagram} alt="Instagram" width={24} height={24} />
-              <Image src={twitter} alt="Twitter" width={24} height={24} />
+          <div style={{ textAlign: "center", marginBottom: 50 }}>
+            <div style={{ fontSize: 15, fontWeight: 500, marginBottom: 22 }}>
+              Follow Us
             </div>
+            <ul
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                gap: isMobile ? 44.33 : 24,
+                padding: 0,
+                listStyle: "none",
+              }}
+            >
+              {socialIcons.map((item, idx) => (
+                <li key={idx}>
+                  <a href={item.href} target="_blank" rel="noopener noreferrer">
+                    <Image src={item.icon} alt={item.alt} width={24} height={24} />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 16,
-              marginTop: "2rem",
-            }}
-          >
-            {/* Help Center */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: "2rem" }}>
             <div
               style={{
                 backgroundColor: "#1A3157",
@@ -87,13 +133,12 @@ export const FooterPage = () => {
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
+                marginBottom: 16,
               }}
             >
               <div>
-                <div style={{ fontWeight: 50, fontSize: 15 }}>Help Center</div>
-                <div
-                  style={{ fontSize: 13, fontWeight: 400, color: "#90A2BD" }}
-                >
+                <div style={{ fontWeight: 500, fontSize: 15 }}>Help Center</div>
+                <div style={{ fontSize: 13, color: "#90A2BD" }}>
                   If you have any questions?
                 </div>
               </div>
@@ -103,7 +148,6 @@ export const FooterPage = () => {
                   backgroundColor: "#2D5BFF",
                   border: "none",
                   borderRadius: "6px",
-                  fontWeight: 400,
                   fontSize: 13,
                 }}
               >
@@ -111,101 +155,63 @@ export const FooterPage = () => {
               </Button>
             </div>
 
-            {/* App download section */}
             <div style={{ display: "flex", gap: 12 }}>
-              {/* Android */}
-              <div
-                style={{
-                  backgroundColor: "#1A3157",
-                  padding: "10px 12px",
-                  borderRadius: "8px",
-                  flex: 1,
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 12,
-                }}
-              >
-                <Image src={android} alt="Android" width={28} height={28} />
-                <div>
-                  <div style={{ fontWeight: 500, fontSize: 12 }}>
-                    Bluechip App
-                  </div>
-                  <div style={{ fontSize: 12, color: "#90A2BD" }}>
-                    for Android
+              {[{ icon: android, label: "Android" }, { icon: apple, label: "iOS" }].map((app, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    backgroundColor: "#1A3157",
+                    padding: "10px 12px",
+                    borderRadius: "8px",
+                    flex: 1,
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 12,
+                  }}
+                >
+                  <Image src={app.icon} alt={app.label} width={28} height={28} />
+                  <div>
+                    <div style={{ fontWeight: 500, fontSize: 12 }}>Bluechip App</div>
+                    <div style={{ fontSize: 12, color: "#90A2BD" }}>for {app.label}</div>
                   </div>
                 </div>
-              </div>
-
-              {/* iOS */}
-              <div
-                style={{
-                  backgroundColor: "#1A3157",
-                  padding: "10px 12px",
-                  borderRadius: "8px",
-                  flex: 1,
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 12,
-                }}
-              >
-                <Image src={apple} alt="iOS" width={28} height={28} />
-                <div>
-                  <div style={{ fontWeight: 500, fontSize: 12 }}>
-                    Bluechip App
-                  </div>
-                  <div style={{ fontSize: 12, color: "#90A2BD" }}>for iOS</div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </>
       ) : (
         <Row gutter={[32, 32]}>
-          <Col xs={24} sm={24} md={12} lg={6} xl={6}>
+          <Col xs={24} sm={24} md={12} lg={6}>
             <div style={{ fontWeight: 600, fontSize: 16 }}>Help Center</div>
             <div style={{ marginBottom: 8 }}>If you have any questions?</div>
             <Button type="primary" style={{ marginBottom: 16, width: 200 }}>
               GET ANSWERS
             </Button>
-            <div style={{ display: "flex", gap: 16 }}>
-              <Image src={telegram} alt="Telegram" width={24} height={24} />
-              <Image src={facebook} alt="Facebook" width={24} height={24} />
-              <Image src={instagram} alt="Instagram" width={24} height={24} />
-              <Image src={twitter} alt="Twitter" width={24} height={24} />
-            </div>
+            <ul style={{ display: "flex", gap: 16 }}>
+              {socialIcons.map((item, idx) => (
+                <li key={idx}>
+                  <a href={item.href} target="_blank" rel="noopener noreferrer">
+                    <Image src={item.icon} alt={item.alt} width={24} height={24} />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </Col>
 
-          <Col xs={12} sm={12} md={6} lg={4} xl={4}>
-            <div style={{ fontWeight: 600, marginBottom: 8 }}>Games</div>
-            <div>Game 1</div>
-            <div>Game 2</div>
-            <div>Game 3</div>
-            <div>Game 14</div>
-          </Col>
+          {footerMenus.map((menu, idx) => (
+            <Col key={idx} xs={12} sm={12} md={6} lg={4}>
+              <div style={{ fontWeight: 600, marginBottom: 20 }}>{menu.title}</div>
+              <ul>
+                {menu.links.map((link, index) => (
+                  <li key={index} style={{ marginBottom: 12 }}>
+                    <Link href={link.href}>{link.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            </Col>
+          ))}
 
-          <Col xs={12} sm={12} md={6} lg={4} xl={4}>
-            <div style={{ fontWeight: 600, marginBottom: 8 }}>About</div>
-            <div>About Us</div>
-            <div>Promotions</div>
-            <div>VIP</div>
-            <div>Help Center</div>
-            <div>Awards & Certificates</div>
-            <div>App</div>
-          </Col>
-
-          <Col xs={24} sm={12} md={12} lg={5} xl={5}>
-            <div style={{ fontWeight: 600, marginBottom: 8 }}>
-              Legal Information
-            </div>
-            <div>General Terms & Conditions</div>
-            <div>Responsible Gaming Policy</div>
-            <div>Sports Betting Rules</div>
-            <div>Privacy and Cookies Policy</div>
-            <div>Payment Methods</div>
-            <div>Limits</div>
-          </Col>
-
-          <Col xs={24} sm={12} md={12} lg={5} xl={5}>
+          <Col xs={24} sm={12} md={12} lg={6}>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               <div
                 style={{
@@ -213,49 +219,44 @@ export const FooterPage = () => {
                   padding: "10px",
                   borderRadius: "8px",
                   display: "flex",
-                  alignItems: "center",
                   gap: 10,
-                  maxWidth: 142,
+                  alignItems: "center",
+                  width: 200,
                 }}
               >
-                <Image src={apple} alt="Apple" width={24} height={24} />
+                <Image src={apple} alt="Apple" width={32} height={32} />
                 <div>
-                  <div style={{ fontWeight: 600 }}>Bluechip App</div>
+                  <div style={{ fontWeight: 600, fontSize: 14 }}>Bluechip App</div>
                   <div style={{ fontSize: 12 }}>for Mac OS</div>
                 </div>
               </div>
               <div style={{ display: "flex", gap: 12 }}>
-                <div
-                  style={{
-                    backgroundColor: "#1A3157",
-                    padding: "10px",
-                    borderRadius: "8px",
-                    flex: 1,
-                    textAlign: "center",
-                    maxWidth: 80,
-                  }}
-                >
-                  <Image src={android} alt="Android" width={24} height={24} />
-                  <div>Android</div>
-                </div>
-                <div
-                  style={{
-                    backgroundColor: "#1A3157",
-                    padding: "10px",
-                    borderRadius: "8px",
-                    flex: 1,
-                    textAlign: "center",
-                    maxWidth: 50,
-                  }}
-                >
-                  <Image src={apple} alt="Apple" width={24} height={24} />
-                  <div>iOS</div>
-                </div>
+                {[{ icon: android, label: "Android" }, { icon: apple, label: "iOS" }].map((item, idx) => (
+                  <div
+                    key={idx}
+                    style={{
+                      backgroundColor: "#1A3157",
+                      padding: "10px",
+                      borderRadius: "8px",
+                      width: 66,
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: 6,
+                    }}
+                  >
+                    <Link href="#" style={{ textAlign: "center", color: "#fff" }}>
+                      <Image src={item.icon} alt={item.label} width={24} height={24} />
+                      <div style={{ fontSize: 12 }}>{item.label}</div>
+                    </Link>
+                  </div>
+                ))}
               </div>
             </div>
           </Col>
         </Row>
       )}
-    </div>
+    </footer>
   );
 };

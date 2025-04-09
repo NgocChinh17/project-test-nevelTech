@@ -12,9 +12,10 @@ import {
   Menu,
 } from "antd";
 import { CloseOutlined, MenuOutlined, SearchOutlined } from "@ant-design/icons";
+import Link from "next/link";
 
 // image
-import White_logo from "../../assets/image/White_logo.svg";
+import White_logo from "@assets/image/White_logo.svg";
 
 // Menu list
 const menuList = [
@@ -62,7 +63,7 @@ export const HeaderPage = () => {
         href={item.path}
         onClick={() => handleMenuClick(item.id)}
         style={{
-          margin: "0 10px",
+          padding: "0 10px",
           color: activeItem === item.id ? "#00C4B4" : "white",
           textDecoration: "none",
           fontSize: "14px",
@@ -110,6 +111,8 @@ export const HeaderPage = () => {
         width: "100%",
         padding: isLargeScreen ? "16px 240px" : "10px 20px",
         boxSizing: "border-box",
+        marginBottom: isLargeScreen ? 55.17 : 0,
+        borderBottom: "1px solid #12294A",
       }}
     >
       <Row align="middle" justify="space-between" gutter={[16, 16]}>
@@ -166,7 +169,9 @@ export const HeaderPage = () => {
               </div>
             </Drawer>
 
-            <Image src={White_logo} alt="logo" width={80} height={30} />
+            <Link href="#">
+              <Image src={White_logo} alt="logo" width={80} height={30} />
+            </Link>
           </div>
         </Col>
 
@@ -185,10 +190,11 @@ export const HeaderPage = () => {
               overlay={searchMenu}
               trigger={["click"]}
               placement="bottomCenter"
-              onVisibleChange={(visible) => setShowSearch(visible)}
+              open={showSearch}
             >
               <div>
                 <SearchOutlined
+                  onClick={() => setShowSearch(!showSearch)}
                   style={{ fontSize: "20px", cursor: "pointer" }}
                 />
               </div>
@@ -203,26 +209,31 @@ export const HeaderPage = () => {
           <div
             style={{ display: "flex", justifyContent: "flex-end", gap: "10px" }}
           >
-            <Button
-              style={{
-                backgroundColor: "#12294A",
-                color: "white",
-                border: "none",
-                borderRadius: "5px",
-              }}
-            >
-              LOGIN
-            </Button>
-            <Button
-              style={{
-                backgroundColor: "#01AF70",
-                color: "white",
-                border: "none",
-                borderRadius: "5px",
-              }}
-            >
-              REGISTER
-            </Button>
+            <Link href="#">
+              <Button
+                style={{
+                  backgroundColor: "#12294A",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "5px",
+                }}
+              >
+                LOGIN
+              </Button>
+            </Link>
+
+            <Link href="#">
+              <Button
+                style={{
+                  backgroundColor: "#01AF70",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "5px",
+                }}
+              >
+                REGISTRATION
+              </Button>
+            </Link>
           </div>
         </Col>
       </Row>

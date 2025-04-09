@@ -1,15 +1,15 @@
-import { Button, Col, Row } from "antd";
+import { Button, Col } from "antd";
 import React from "react";
 import Image from "next/image";
 
-import daimon from "../../assets/iconButton/daimon.svg";
-import vip from "../../assets/iconButton/vip.svg";
-import promo from "../../assets/iconButton/promotion 5.svg";
-import hot from "../../assets/iconButton/hot.svg";
-import p2p from "../../assets/iconButton/p2p.svg";
-import games from "../../assets/iconButton/games.svg";
-import providers from "../../assets/iconButton/providers.svg";
-import search from "../../assets/iconButton/search.svg";
+import daimon from "@assets/iconButton/daimon.svg";
+import vip from "@assets/iconButton/vip.svg";
+import promo from "@assets/iconButton/promotion 5.svg";
+import hot from "@assets/iconButton/hot.svg";
+import p2p from "@assets/iconButton/p2p.svg";
+import games from "@assets/iconButton/games.svg";
+import providers from "@assets/iconButton/providers.svg";
+import search from "@assets/iconButton/search.svg";
 
 import './style.scss';
 
@@ -21,75 +21,91 @@ const buttonStyle = {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  padding: "17px 30.7px",
 };
 
+const listButton = [
+  {
+    id: 1,
+    icon: search,
+    title: "Search",
+    isDisable: true,
+    showOn: { xs: true, md: false },
+  },
+  {
+    id: 2,
+    icon: daimon,
+    title: "Diamond mine",
+    showOn: { md: true },
+  },
+  {
+    id: 3,
+    icon: vip,
+    title: "VIP",
+    showOn: { md: true },
+  },
+  {
+    id: 4,
+    icon: promo,
+    title: "Promotion",
+    showOn: { md: true },
+  },
+  {
+    id: 5,
+    icon: hot,
+    title: "Hot Match",
+    showOn: { md: true },
+  },
+  {
+    id: 6,
+    icon: p2p,
+    title: "P2P Transaction",
+    showOn: { md: true },
+  },
+  {
+    id: 7,
+    icon: games,
+    title: "Games",
+    showOn: { xs: true, md: true },
+  },
+  {
+    id: 8,
+    icon: providers,
+    title: "Providers",
+    showOn: { xs: true, md: true },
+  },
+];
+
 export const MenuButton = () => {
+  const renderButtons = () =>
+    listButton.map((item) => {
+      const colProps = {
+        xs: item.showOn?.xs ? 8 : 0,
+        sm: item.showOn?.xs ? 6 : 0,
+        md: item.showOn?.md ? 3 : 0,
+        lg: item.showOn?.md ? 3 : 0,
+      };
+
+      return (
+        <Col key={item.id} {...colProps}>
+          <Button style={buttonStyle} disabled={item.isDisable}>
+            <Image
+              src={item.icon}
+              alt={item.title}
+              className="icon-img"
+              style={{ marginRight: 6 }}
+            />
+            {item.title}
+          </Button>
+        </Col>
+      );
+    });
+
   return (
     <div className="responsive-padding" style={{ overflowX: "hidden" }}>
-      <Row 
-        style={{
-          display: "flex", 
-          flexWrap: "wrap",
-        }} 
-        gutter={[16, 16]} 
-        justify="center"
-      >
-        <Col xs={8} sm={6} md={0} lg={0}>
-          <Button style={buttonStyle}>
-            <Image src={search} alt="Search" />
-            Search
-          </Button>
-        </Col>
-
-        <Col xs={0} sm={0} md={3} lg={3}>
-          <Button style={buttonStyle}>
-            <Image src={daimon} alt="Diamond mine" />
-            Diamond mine
-          </Button>
-        </Col>
-
-        <Col xs={0} sm={0} md={3} lg={3}>
-          <Button style={buttonStyle}>
-            <Image src={vip} alt="VIP" />
-            VIP
-          </Button>
-        </Col>
-
-        <Col xs={0} sm={0} md={3} lg={3}>
-          <Button style={buttonStyle}>
-            <Image src={promo} alt="ProMotion" />
-            ProMotion
-          </Button>
-        </Col>
-
-        <Col xs={0} sm={0} md={3} lg={3}>
-          <Button style={buttonStyle}>
-            <Image src={hot} alt="Hot Match" />
-            Hot Match
-          </Button>
-        </Col>
-
-        <Col xs={0} sm={0} md={3} lg={3}>
-          <Button style={buttonStyle}>
-            <Image src={p2p} alt="P2P Transaction" />
-            P2P Transaction
-          </Button>
-        </Col>
-
-        <Col xs={8} sm={6} md={3} lg={3}>
-          <Button style={buttonStyle}>
-            <Image src={games} alt="Games" />
-            Games
-          </Button>
-        </Col>
-
-        <Col xs={8} sm={6} md={3} lg={3}>
-          <Button style={buttonStyle}>
-            <Image src={providers} alt="Providers" />
-            Providers
-          </Button>
-        </Col>
-      </Row>
+      <div className="button-row">
+        {renderButtons()}
+      </div>
     </div>
   );
 };

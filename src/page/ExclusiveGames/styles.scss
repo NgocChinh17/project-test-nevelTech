@@ -1,27 +1,46 @@
-.exclusive-games-wrapper {
-  padding: 10px 20px; 
+.exclusive-games-header {
+  margin-bottom: 32px;
+}
+
+.exclusive-games-header,
+.all-providers-header {
+  p {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.exclusive-games-slider {
+  margin-bottom: 40px;
+}
+
+.all-providers-header {
+  margin-bottom: 32px;
 }
 
 @media (min-width: 1200px) {
   .exclusive-games-wrapper {
-    padding: 16px 240px; 
+    padding: 0px 240px;
   }
 }
 
-.slick-slider {
-  width: 100%;
-  height: 100%;
-  margin-top: 20px;
+.slick-list {
+  margin: 0 -8px;
 }
 
 .slick-slide {
+  padding: 0 8px;
   text-align: center;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  border-radius: 10px; 
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -29,17 +48,28 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover; 
-  border-radius: 10px; 
+  object-fit: cover;
+  border-radius: 10px;
   transition: transform 0.3s ease;
 }
 
-/* Khi màn hình nhỏ hơn 768px */
 @media (max-width: 768px) {
+  .exclusive-games-header {
+    margin-bottom: 12px;
+  }
+
+  .exclusive-games-slider {
+    margin-bottom: 24px;
+  }
+
+  .all-providers-header {
+    margin-bottom: 12px;
+  }
+
   .slick-slide img {
-    width: 119.51px;  
-    height: 160px;     
-    object-fit: cover; 
+    width: 119.51px;
+    height: 160px;
+    object-fit: cover;
   }
 
   .see-all-text {
@@ -49,9 +79,9 @@
 
 @media (min-width: 768px) {
   .slick-slide img {
-    width: 156px;  
-    height: 210.6px;
-    object-fit: cover; 
+    width: 120px;
+    height: 162px;
+    object-fit: cover;
   }
 }
 
@@ -63,7 +93,8 @@
   text-decoration: underline;
 }
 
-.slick-prev, .slick-next {
+.slick-prev,
+.slick-next {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border-radius: 50%;

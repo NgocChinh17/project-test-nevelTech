@@ -1,29 +1,31 @@
 "use client";
-
 import React from "react";
 import Slider from "react-slick";
+import Image from "next/image";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import banner from "../../assets/image/HR banner.png";
-import Image from "next/image";
-import './style.scss';
+import banner from "@assets/image/HR banner1.png";
+import bannerMobile from "@assets/image/bannerMobile.png";
+
+import "./style.scss";
 
 export const SliderPage = () => {
   const settings = {
     className: "center",
     centerMode: true,
     infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 3,
-    speed: 500,
+    centerPadding: "25%",
+    slidesToShow: 1,
+    speed: 1000,
     focusOnSelect: true,
     responsive: [
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 1,
-          centerPadding: "20px",
+          centerPadding: "6%",
+          dots: true,
         },
       },
     ],
@@ -33,17 +35,16 @@ export const SliderPage = () => {
     <div className="slider-container">
       <Slider {...settings}>
         {[...Array(6)].map((_, index) => (
-          <div key={index}>
+          <div key={index} className="custom-slide">
             <div className="image-wrapper">
-              <Image
-                src={banner}
-                alt={`Banner ${index + 1}`}
-                layout="responsive"
-                width={1000}
-                height={500}
-                objectFit="cover"
-                priority={index === 0}
-              />
+              <picture>
+                <source media="(max-width: 768px)" srcSet={bannerMobile.src} />
+                <Image
+                  src={banner}
+                  alt={`Banner ${index + 1}`}
+                  priority={index === 0}
+                />
+              </picture>
             </div>
           </div>
         ))}

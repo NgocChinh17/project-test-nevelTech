@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image, { StaticImageData } from "next/image";
+
 import "./style.scss";
 
 interface GameCardProps {
