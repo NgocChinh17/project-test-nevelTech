@@ -46,7 +46,7 @@ export const AllProviders = () => {
         settings: { slidesToShow: 3.5 },
       },
       {
-        breakpoint: 480,
+        breakpoint: 576,
         settings: { slidesToShow: 3 },
       },
     ],

@@ -15,12 +15,16 @@
   font-family: Arial, sans-serif;
   text-align: center;
   overflow: hidden;
-  margin: 0 6px; 
+  margin: 0 12px; // khoảng cách slide mặc định
+
+  @media (max-width: 768px) {
+    margin: 0 6px; // ✅ khoảng cách 6px cho mobile
+  }
 }
 
 .topSection {
   flex: 1;
-  background-color: #1A2A44;
+  background-color: #1a2a44;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +37,7 @@
 
 .bottomSection {
   flex: 1;
-  background-color: #2A3B5A;
+  background-color: #2a3b5a;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,7 +55,7 @@
   }
 }
 
-/* Responsive cho tablet */
+/* Tablet */
 @media (max-width: 768px) {
   .box {
     width: 120px;
@@ -73,10 +77,10 @@
   }
 }
 
-/* Responsive cho điện thoại */
+/* Mobile */
 @media (max-width: 576px) {
   .box {
-    width: 120px;
+    width: 110px;
     height: 122px;
 
     .topSection img {
