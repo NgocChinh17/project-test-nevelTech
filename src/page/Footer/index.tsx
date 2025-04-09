@@ -67,7 +67,7 @@ export const FooterPage = () => {
       style={{
         backgroundColor: "#12294A",
         color: "#fff",
-        padding: isMobile ? "2rem" : "60px 220px",
+        padding: isMobile ? "2rem" : "100px 55px 40px 240px",
       }}
     >
       {isMobile ? (
@@ -203,7 +203,7 @@ export const FooterPage = () => {
               <div style={{ fontWeight: 600, marginBottom: 20 }}>{menu.title}</div>
               <ul>
                 {menu.links.map((link, index) => (
-                  <li key={index} style={{ marginBottom: 12 }}>
+                  <li key={index} style={{ marginBottom: 12, color: "#90A2BD" }}>
                     <Link href={link.href}>{link.name}</Link>
                   </li>
                 ))}

@@ -14,7 +14,7 @@ import search from "@assets/iconButton/search.svg";
 import './style.scss';
 
 const buttonStyle = {
-  backgroundColor: "#03193A",
+  backgroundColor: "#12294A",
   color: "white",
   fontSize: "13px",
   width: "100%",

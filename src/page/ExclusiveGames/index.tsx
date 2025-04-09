@@ -28,100 +28,44 @@ export const ExclusiveGames = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 5.5,
+    slidesToShow: 8.5,
     slidesToScroll: 1,
     swipeToSlide: true,
-    centerMode: false,
     responsive: [
       {
         breakpoint: 1024,
-        settings: {
-          slidesToShow: 4.5,
-          slidesToScroll: 1,
-        },
+        settings: { slidesToShow: 3.5 },
       },
       {
         breakpoint: 768,
-        settings: {
-          slidesToShow: 3.5,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 2.5,
-          slidesToScroll: 1,
-        },
+        settings: { slidesToShow: 2.5 },
       },
       {
         breakpoint: 480,
-        settings: {
-          slidesToShow: 2.5,
-          slidesToScroll: 1,
-        },
+        settings: { slidesToShow: 3 },
       },
     ],
   };
 
   const gameList = [
-    {
-      id: 1,
-      src: HPGaming,
-      alt: "HPGaming",
-      labelText: "100HP GAMING",
-      isHot: true,
-    },
-    {
-      id: 2,
-      src: veliplay,
-      alt: "veliplay",
-      labelText: "VELIPLAY",
-      isHot: true,
-    },
-    {
-      id: 3,
-      src: evolution,
-      alt: "evolution",
-      labelText: "EVOLUTION",
-      isNews: true,
-    },
+    { id: 1, src: HPGaming, alt: "HPGaming", labelText: "100HP GAMING", isHot: true },
+    { id: 2, src: veliplay, alt: "veliplay", labelText: "VELIPLAY", isHot: true },
+    { id: 3, src: evolution, alt: "evolution", labelText: "EVOLUTION", isNews: true },
     { id: 4, src: launch, alt: "launch", labelText: "LAUNCH", isNews: true },
     { id: 5, src: deepdive, alt: "deepdive", labelText: "DEEPDIVE" },
     { id: 6, src: funry, alt: "funry", labelText: "FUNRY", isHot: true },
     { id: 7, src: cuoi, alt: "cuoi", labelText: "VELIPLAY", isHot: true },
-    {
-      id: 8,
-      src: BlueChipSpace,
-      alt: "BlueChipSpace",
-      labelText: "VELIPLAY",
-      isHot: true,
-    },
+    { id: 8, src: BlueChipSpace, alt: "BlueChipSpace", labelText: "VELIPLAY", isHot: true },
   ];
 
   return (
-    <div className="exclusive-games-wrapper" style={{ overflowX: "hidden" }}>
-      <Row
-        className="exclusive-games-header"
-        gutter={[16, 16]}
-        justify="space-between"
-        align="middle"
-      >
-        <Col xs={18} sm={16} md={16}>
-          <p style={{ color: "white" }}>Exclusive Games</p>
+    <div className="exclusive-games-wrapper">
+      <Row className="exclusive-games-header" gutter={[16, 16]} justify="space-between" align="middle">
+        <Col xs={18}>
+          <p>Exclusive Games</p>
         </Col>
-        <Col
-          xs={6}
-          sm={8}
-          md={8}
-          style={{ display: "flex", justifyContent: "flex-end" }}
-        >
-          <p
-            className="see-all-text"
-            style={{ fontSize: "15px", color: "white", paddingRight: 10 }}
-          >
-            SEE ALL
-          </p>
+        <Col xs={6} style={{ display: "flex", justifyContent: "flex-end" }}>
+          <div className="see-all-text">SEE ALL</div>
           <Image src={seeAll} alt="seeAll" width={20} height={20} />
         </Col>
       </Row>
@@ -140,28 +84,12 @@ export const ExclusiveGames = () => {
         ))}
       </Slider>
 
-      <Row
-        className="all-providers-header"
-        gutter={[16, 16]}
-        justify="space-between"
-        align="middle"
-        style={{ marginTop: "24px" }}
-      >
-        <Col xs={18} sm={16} md={16}>
-          <p style={{ color: "white" }}>ALL Providers</p>
+      <Row className="all-providers-header" gutter={[16, 16]} justify="space-between" align="middle">
+        <Col xs={18}>
+          <p>ALL Providers</p>
         </Col>
-        <Col
-          xs={6}
-          sm={8}
-          md={8}
-          style={{ display: "flex", justifyContent: "flex-end" }}
-        >
-          <p
-            className="see-all-text"
-            style={{ fontSize: "15px", color: "white", paddingRight: 10 }}
-          >
-            SEE ALL
-          </p>
+        <Col xs={6} style={{ display: "flex", justifyContent: "flex-end" }}>
+          <div className="see-all-text">SEE ALL</div>
           <Image src={seeAll} alt="seeAll" width={20} height={20} />
         </Col>
       </Row>
