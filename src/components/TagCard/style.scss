@@ -16,6 +16,7 @@
     display: block;
     /* Bỏ transition */
     transition: none;
+    padding: 0 2px;
   }
 
   /* Bỏ hover */
@@ -38,11 +39,11 @@
   }
 
   &.hot::before {
-    background-image: url("../../assets/tag/HOT.png");
+    background-image: url("../../assets/tag/hot.svg");
   }
 
   &.news::before {
-    background-image: url("../../assets/tag/NEW.png");
+    background-image: url("../../assets/tag/new.svg");
   }
 
   .overlay-text {
