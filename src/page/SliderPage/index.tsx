@@ -16,7 +16,7 @@ export const SliderPage = () => {
     className: "center",
     centerMode: true,
     infinite: true,
-    centerPadding: "18%",
+    centerPadding: "20%",
     slidesToShow: 1,
     speed: 1000,
     focusOnSelect: true,

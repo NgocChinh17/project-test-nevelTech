@@ -67,7 +67,7 @@ export const FooterPage = () => {
       style={{
         backgroundColor: "#12294A",
         color: "#fff",
-        padding: isMobile ? "2rem" : "100px 55px 40px 240px",
+        padding: isMobile ? "2rem" : "60px 55px 100px 240px",
       }}
     >
       {isMobile ? (
@@ -128,7 +128,14 @@ export const FooterPage = () => {
             </ul>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: "2rem" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 16,
+              marginTop: "2rem",
+            }}
+          >
             <div className="help-box">
               <div>
                 <div className="help-title">Help Center</div>
@@ -148,9 +155,17 @@ export const FooterPage = () => {
             </div>
 
             <div style={{ display: "flex", gap: 12 }}>
-              {[{ icon: android, label: "Android" }, { icon: apple, label: "iOS" }].map((app, idx) => (
+              {[
+                { icon: android, label: "Android" },
+                { icon: apple, label: "iOS" },
+              ].map((app, idx) => (
                 <div key={idx} className="app-box">
-                  <Image src={app.icon} alt={app.label} width={28} height={28} />
+                  <Image
+                    src={app.icon}
+                    alt={app.label}
+                    width={28}
+                    height={28}
+                  />
                   <div>
                     <div className="app-title">Bluechip App</div>
                     <div className="app-subtext">for {app.label}</div>
@@ -185,10 +200,15 @@ export const FooterPage = () => {
 
           {footerMenus.map((menu, idx) => (
             <Col key={idx} xs={12} sm={12} md={6} lg={4}>
-              <div style={{ fontWeight: 600, marginBottom: 20 }}>{menu.title}</div>
+              <div style={{ fontWeight: 600, marginBottom: 20 }}>
+                {menu.title}
+              </div>
               <ul>
                 {menu.links.map((link, index) => (
-                  <li key={index} style={{ marginBottom: 12, color: "#90A2BD" }}>
+                  <li
+                    key={index}
+                    style={{ marginBottom: 12, color: "#90A2BD" }}
+                  >
                     <Link href={link.href}>{link.name}</Link>
                   </li>
                 ))}
@@ -201,15 +221,28 @@ export const FooterPage = () => {
               <div className="mac-box">
                 <Image src={apple} alt="Apple" width={32} height={32} />
                 <div>
-                  <div style={{ fontWeight: 600, fontSize: 14 }}>Bluechip App</div>
+                  <div style={{ fontWeight: 600, fontSize: 14 }}>
+                    Bluechip App
+                  </div>
                   <div style={{ fontSize: 12 }}>for Mac OS</div>
                 </div>
               </div>
               <div style={{ display: "flex", gap: 12 }}>
-                {[{ icon: android, label: "Android" }, { icon: apple, label: "iOS" }].map((item, idx) => (
+                {[
+                  { icon: android, label: "Android" },
+                  { icon: apple, label: "iOS" },
+                ].map((item, idx) => (
                   <div key={idx} className="app-icon-box">
-                    <Link href="#" style={{ textAlign: "center", color: "#fff" }}>
-                      <Image src={item.icon} alt={item.label} width={24} height={24} />
+                    <Link
+                      href="#"
+                      style={{ textAlign: "center", color: "#fff" }}
+                    >
+                      <Image
+                        src={item.icon}
+                        alt={item.label}
+                        width={24}
+                        height={24}
+                      />
                       <div style={{ fontSize: 12 }}>{item.label}</div>
                     </Link>
                   </div>
