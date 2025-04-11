@@ -1,11 +1,10 @@
 .footer-mobile {
   background-color: #12294a;
   color: #fff;
-  padding: 60px 240px;
+  padding-block: 60px;
 
-  .container {
-    max-width: 1440px;
-    margin: 0 auto;
+  @media (max-width: 768px) {
+    padding-block: 40px;
   }
 
   .white {
@@ -17,10 +16,16 @@
     color: #fff !important;
   }
 
-  .help-box {
+  .help-box,
+  .app-box,
+  .mac-box,
+  .app-icon-box {
     background-color: #1a3157;
-    padding: 16px;
     border-radius: 8px;
+  }
+
+  .help-box {
+    padding: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,9 +42,7 @@
   }
 
   .app-box {
-    background-color: #1a3157;
     padding: 10px 12px;
-    border-radius: 8px;
     flex: 1;
     display: flex;
     align-items: center;
@@ -57,24 +60,25 @@
   }
 
   .mac-box {
-    background-color: #1a3157;
     padding: 10px;
-    border-radius: 8px;
     display: flex;
     gap: 10px;
     max-width: 190px;
   }
 
   .app-icon-box {
-    background-color: #1a3157;
     padding: 10px;
-    border-radius: 8px;
-    width: 66px;
+    width: 75px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 6px;
+
+    .white {
+      font-size: 12px;
+      text-align: center;
+    }
   }
 
   .social-icon {
@@ -85,5 +89,59 @@
       width: 35px;
       height: 35px;
     }
+  }
+}
+
+.footer-contact {
+  @media (max-width: 768px) {
+    padding-top: 20px;
+  }
+}
+
+.footer-pc-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-column {
+  min-width: 160px;
+  max-width: 220px;
+}
+
+.footer-title {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.footer-subtext {
+  margin-bottom: 8px;
+  color: #90a2bd;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin-bottom: 12px;
+    color: #90a2bd;
+  }
+}
+
+.footer-socials {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+
+  @media (min-width: 769px) {
+    justify-content: flex-start;
   }
 }

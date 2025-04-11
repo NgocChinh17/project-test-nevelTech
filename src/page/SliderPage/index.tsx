@@ -25,7 +25,7 @@ export const SliderPage = () => {
         breakpoint: 768,
         settings: {
           centerPadding: "0%",
-          dots: true, // Bật dots chỉ trên mobile
+          dots: true,
         },
       },
     ],

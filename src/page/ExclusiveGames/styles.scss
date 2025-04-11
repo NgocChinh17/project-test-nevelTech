@@ -1,13 +1,5 @@
 .exclusive-games-wrapper {
   overflow: hidden;
-
-  @media (min-width: 1200px) {
-    padding: 0px 240px;
-  }
-
-  @media (max-width: 768px) {
-    padding: 0 16px;
-  }
 }
 
 .exclusive-games-header,

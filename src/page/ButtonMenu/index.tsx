@@ -1,6 +1,8 @@
-import { Button, Col } from "antd";
+"use client";
+import { Col } from "antd";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import daimon from "@assets/iconButton/daimon.svg";
 import vip from "@assets/iconButton/vip.svg";
@@ -13,99 +15,82 @@ import search from "@assets/iconButton/search.svg";
 
 import './style.scss';
 
-const buttonStyle = {
-  backgroundColor: "#12294A",
-  color: "white",
-  fontSize: "13px",
-  width: "100%",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  padding: "17px 30.7px",
-};
-
 const listButton = [
   {
     id: 1,
     icon: search,
     title: "Search",
+    path: "#",
     isDisable: true,
-    showOn: { xs: true, md: false },
+    className: "hide-on-pc"
   },
   {
     id: 2,
     icon: daimon,
     title: "Diamond mine",
-    showOn: { md: true },
+    path: "#",
+    className: "hide-on-mb"
   },
   {
     id: 3,
     icon: vip,
     title: "VIP",
-    showOn: { md: true },
+    path: "#",
+    className: "hide-on-mb"
   },
   {
     id: 4,
     icon: promo,
     title: "Promotion",
-    showOn: { md: true },
+    path: "#",
+    className: "hide-on-mb"
   },
   {
     id: 5,
     icon: hot,
     title: "Hot Match",
-    showOn: { md: true },
+    path: "#",
+    className: "hide-on-mb"
   },
   {
     id: 6,
     icon: p2p,
     title: "P2P Transaction",
-    showOn: { md: true },
+    path: "#",
+    className: "hide-on-mb"
   },
   {
     id: 7,
     icon: games,
     title: "Games",
-    showOn: { xs: true, md: true },
+    path: "#",
+    className: ""
   },
   {
     id: 8,
     icon: providers,
     title: "Providers",
-    showOn: { xs: true, md: true },
+    path: "#",
+    className: ""
   },
 ];
 
 export const MenuButton = () => {
   const renderButtons = () =>
-    listButton.map((item) => {
-      const colProps = {
-        xs: item.showOn?.xs ? 8 : 0,
-        sm: item.showOn?.xs ? 6 : 0,
-        md: item.showOn?.md ? 3 : 0,
-        lg: item.showOn?.md ? 3 : 0,
-      };
-
-      return (
-        <Col key={item.id} {...colProps}>
-          <Button style={buttonStyle} disabled={item.isDisable}>
+    listButton.map((item) => (
+      <Col key={item.id} className={`${item.className} button-item`}>
+        <Link href={item.path}>
+          <button className="custom-button" disabled={item.isDisable}>
             <Image
               src={item.icon}
               alt={item.title}
               className="icon-img"
-              style={{ marginRight: 6 }}
             />
             {item.title}
-          </Button>
-        </Col>
-      );
-    });
+          </button>
+        </Link>
+      </Col>
+    ));
 
-  return (
-    <div className="responsive-padding" style={{ overflowX: "hidden" }}>
-      <div className="button-row">
-        {renderButtons()}
-      </div>
-    </div>
-  );
+  return <div className="button-row">{renderButtons()}</div>;
 };
