@@ -4,13 +4,13 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import daimon from "@assets/iconButton/daimon.svg";
-import vip from "@assets/iconButton/vip.svg";
-import promo from "@assets/iconButton/promotion 5.svg";
-import hot from "@assets/iconButton/hot.svg";
-import p2p from "@assets/iconButton/p2p.svg";
-import games from "@assets/iconButton/games.svg";
-import providers from "@assets/iconButton/providers.svg";
+import daimon from "@assets/iconButton/daimon.png";
+import vip from "@assets/iconButton/VIP.png";
+import promo from "@assets/iconButton/promotion.png";
+import hot from "@assets/iconButton/HotMatch.png";
+import p2p from "@assets/iconButton/P2PTransaction.png";
+import games from "@assets/iconButton/game.png";
+import providers from "@assets/iconButton/promotion.png";
 import search from "@assets/iconButton/search.svg";
 
 import './style.scss';
