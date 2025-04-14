@@ -142,12 +142,13 @@
 .footer-socials {
   display: flex;
   gap: 16px;
-  margin-top: 12px;
   list-style: none;
   padding: 0;
   justify-content: center;
+  gap: 43.33px;
 
   @media (min-width: 769px) {
-    justify-content: flex-start;
+    justify-content: center;
+    gap: 24px;
   }
 }
