@@ -36,8 +36,8 @@
   padding: 17px 30.7px;
   border-radius: 8px;
   border: 1px solid  rgba(255, 255, 255, 0.10);
-  font-family: 'Inter', sans-serif;
   white-space: nowrap;
+  font-family: var(--font-inter);
 
   @media (max-width: 768px) {
     border-radius: 10px;

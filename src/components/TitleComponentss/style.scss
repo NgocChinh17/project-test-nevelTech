@@ -6,7 +6,7 @@
 }
 
 .section-title {
-    font-family: "inter", sans-serif;
+    font-family: var(--font-inter);
     color: rgba(255, 255, 255, 1);
     font-size: 32px;
     font-weight: 500;
@@ -25,7 +25,7 @@
     color: white;
     padding-right: 10px;
     cursor: pointer;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-inter);
   
     &:hover {
       text-decoration: underline;
@@ -35,3 +35,7 @@
       display: none;
     }
   }
+
+.see-all-icon {
+  font-family: var(--font-inter);
+}

@@ -13,6 +13,9 @@ import twitter from "@/assets/iconFooter/tw.svg";
 import apple from "@/assets/iconFooter/apple.svg";
 import android from "@/assets/iconFooter/android.svg";
 
+//icon dropdown
+import Dropdown from "@assets/iconFooter/iconDropdown.png";
+
 const { Panel } = Collapse;
 
 const footerMenus = [
@@ -66,13 +69,25 @@ export const FooterPage = () => {
             ghost
             expandIconPosition="end"
             defaultActiveKey={["0", "1", "2"]}
+            expandIcon={({ isActive }) => (
+              <Image
+                src={Dropdown}
+                alt="Dropdown icon"
+                style={{
+                  transform: isActive ? "rotate(180deg)" : "rotate(0deg)",
+                  transition: "transform 0.3s",
+                  width: 16,
+                  height: 16,
+                }}
+              />
+            )}
           >
             {footerMenus.map((menu, idx) => (
               <Panel
                 header={menu.title}
                 key={String(idx)}
                 style={{
-                  color: "rgba(255, 255, 255, 1)",
+                  backgroundColor: "#1A3157",
                   borderRadius: 10,
                   marginBottom: 16,
                   overflow: "hidden",

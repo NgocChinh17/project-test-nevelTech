@@ -1,11 +1,11 @@
 import "./globals.css";
-import { Inter } from 'next/font/google';
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] });
-
-export const metadata = {
-  title: 'bài test 3',
-};
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export default function RootLayout({
   children,
@@ -13,8 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className} style={{ backgroundColor: "#03193A" }}>
+    <html lang="en" className={inter.variable}>
+      <body style={{ backgroundColor: "#03193A" }}>
         {children}
       </body>
     </html>

@@ -27,7 +27,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({ title }) => {
           SEE ALL
         </Link>
         <Link href="#">
-          <Image src={seeAll} alt="seeAll" width={20} height={20} />
+          <Image className="see-all-icon" src={seeAll} alt="seeAll" width={20} height={20} />
         </Link>
       </Col>
     </Row>

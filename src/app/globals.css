@@ -5,7 +5,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Jost","Segoe UI","Roboto","Oxygen",sans-serif
+  font-family: var(--font-inter);
 }
 .container {
   max-width: 1472px;

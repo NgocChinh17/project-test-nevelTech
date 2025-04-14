@@ -1,4 +1,3 @@
-"use client";
 import { Col } from "antd";
 import React from "react";
 import Image from "next/image";
@@ -21,7 +20,6 @@ const listButton = [
     icon: search,
     title: "Search",
     path: "#",
-    isDisable: true,
     className: "hide-on-pc"
   },
   {
@@ -80,7 +78,7 @@ export const MenuButton = () => {
     listButton.map((item) => (
       <Col key={item.id} className={`${item.className} button-item`}>
         <Link href={item.path}>
-          <button className="custom-button" disabled={item.isDisable}>
+          <button className="custom-button">
             <Image
               src={item.icon}
               alt={item.title}
