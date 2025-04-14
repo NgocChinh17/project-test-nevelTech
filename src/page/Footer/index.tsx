@@ -72,7 +72,7 @@ export const FooterPage = () => {
                 header={menu.title}
                 key={String(idx)}
                 style={{
-                  backgroundColor: "#1A3157",
+                  color: "rgba(255, 255, 255, 1)",
                   borderRadius: 10,
                   marginBottom: 16,
                   overflow: "hidden",
