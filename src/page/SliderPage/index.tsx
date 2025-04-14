@@ -16,7 +16,7 @@ export const SliderPage = () => {
     className: "center",
     centerMode: true,
     infinite: true,
-    centerPadding: "20%",
+    centerPadding: "19%",
     slidesToShow: 1,
     speed: 1000,
     focusOnSelect: true,
@@ -24,7 +24,7 @@ export const SliderPage = () => {
       {
         breakpoint: 768,
         settings: {
-          centerPadding: "0%",
+          centerPadding: "2%",
           dots: true,
         },
       },

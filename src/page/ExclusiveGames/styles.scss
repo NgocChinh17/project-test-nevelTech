@@ -1,41 +1,15 @@
 .exclusive-games-wrapper {
   overflow: hidden;
-}
-
-.exclusive-games-header,
-.all-providers-header {
-  margin-bottom: 24px;
-
-  p {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-
-    @media (max-width: 768px) {
-      font-size: 14px;
-    }
-  }
-}
-
-.see-all-text {
-  font-size: 15px;
-  font-weight: 500;
-  color: white;
-  padding-right: 10px;
-  cursor: pointer;
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  @media (max-width: 768px) {
-    display: none;
-  }
+  font-family: 'Inter', sans-serif;
 }
 
 .exclusive-games-slider {
   margin-bottom: 40px;
   cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 24px;
+  }
 }
 
 .slick-list {

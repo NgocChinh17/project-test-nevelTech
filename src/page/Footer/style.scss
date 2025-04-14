@@ -2,6 +2,7 @@
   background-color: #12294a;
   color: #fff;
   padding-block: 60px;
+  font-family: 'Inter', sans-serif;
 
   @media (max-width: 768px) {
     padding-block: 40px;
@@ -90,6 +91,11 @@
       height: 35px;
     }
   }
+
+}
+
+.get-answers {
+  font-family: 'Inter', sans-serif;
 }
 
 .footer-contact {

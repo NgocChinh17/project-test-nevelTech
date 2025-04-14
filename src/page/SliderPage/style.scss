@@ -2,6 +2,11 @@
   width: 100%;
   margin-bottom: 40px;
   position: relative;
+  font-family: 'Inter', sans-serif;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 24px;
+  }
 
   .slick-list {
     overflow: hidden;
@@ -55,37 +60,37 @@
       display: flex !important; // Hiện ở mobile
       justify-content: center;
       align-items: center;
-      gap: 0px; // ✅ Khoảng cách giữa các dots đã chỉnh
+      // gap: 6px; // ✅ Khoảng cách giữa các dots đã chỉnh
       bottom: -12px;
       position: absolute;
       width: 100%;
     }
 
     li {
-      width: 10px;
-      height: 10px;
+      width: 6px;
+      height: 6px;
 
       button {
         padding: 0;
-        width: 10px;
-        height: 10px;
+        width: 6px;
+        height: 6px;
 
         &:before {
           content: "";
           display: block;
-          width: 8px;
-          height: 8px;
+          width: 6px;
+          height: 6px;
           border-radius: 50%;
-          background-color: #ccc;
+          background-color: rgba(255, 255, 255, 0.4);
           opacity: 0.6;
           transition: all 0.3s ease;
         }
       }
 
       &.slick-active button:before {
-        background-color: #fff;
-        width: 10px;
-        height: 10px;
+        background-color: rgba(255, 255, 255, 1);
+        width: 6px;
+        height: 6px;
         opacity: 1;
       }
     }
@@ -98,4 +103,3 @@
     z-index: 10;
   }
 }
-  

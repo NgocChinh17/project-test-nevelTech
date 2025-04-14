@@ -1,0 +1,37 @@
+.section-header {
+    margin-bottom: 32px;
+    @media screen and (max-width: 768px) {
+      margin-bottom: 12px;
+    }
+}
+
+.section-title {
+    font-family: "inter", sans-serif;
+    color: rgba(255, 255, 255, 1);
+    font-size: 32px;
+    font-weight: 500;
+
+    @media screen and (max-width: 768px) {
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 1);
+    }
+}
+
+
+.see-all-text {
+    font-size: 15px;
+    font-weight: 400;
+    color: white;
+    padding-right: 10px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
